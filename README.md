@@ -1,50 +1,40 @@
-# Angular Material
+# Angular
 
-Se debe trabajar sobre un proyecto con angular-cli
-
+## Angular CLI
+Abarca:
+- Scaffold: Generar una estructura inicial de archivos para proyecto, configuraciones.
+- Preview: Vista previa
+- Local Build: Proceso para construir el JS, los scripts necesarios.
+- Local Testing, Unit Test, E2E test: Pruebas para verificar código, clases, servicios
+- Best Practices: Reglas, combinar las mejores practicas
 ~~~
-ng new nombre-curso --routing --prefix ed --style css
-~~~
-
-## Instalación via Angular CLI
-
-Instala y configura
-
-~~~
-ng add @angular/material
+npm install -g @angular/cli
 ~~~
 
-Se recomienda eliminar el contenido del archivo *app.component.html* y solo dejar `<router-outlet></router-outlet>` e ir agregando componentes
-
-## Generando Componentes
-
-Angular CLI schematics, generados de código que se basan en un template.
-
+## Crear aplicación / proyecto forma básica
 ~~~
-ng generate @angular/material:componente nombre-componente
-~~~
-Ej: 
-- ng generate @angular/material:dashboard tablero
-
-- ng generate @angular/material:table tabla
-
-- ng generate @angular/material:tree arbol
-
-~~~
-ng generate component archivo --no-spec --dry-run
-
-ng generate component carpeta/archivo --no-spec --dry-run
+ng new nombre-proyecto
 ~~~
 
-## Importación de Módulos
-
+### Crear proyecto/aplicacion desde cero
 ~~~
-ng generate module nombre-modulo --dry-run
+ng new nombre-proyecto --routing
+                       --prefix letras-prefix
+                       --style css
+                       --skip-install
+~~~ 
+Opciones de personalización:
+- --routing: Módulo de manejo de rutas
+- --prefix: Prefijo para componentes, directivas, servicios
+- --skip: Permite generar la estructura sin dependencias
+- --style: Para definir con que vamos a trabajar css, preprocesadores ej. Sass
+
+## Para levantar proyecto
+~~~
+ng serve
+ng serve -p numeroPuerto
+ng serve -o
 ~~~
 
---dry-run, es para simular resultado
-
-~~~
-ng generate module demo --routing --dry-run
-~~~
-
+## Para ejecutar los test
+ng test
